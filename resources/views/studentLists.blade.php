@@ -15,7 +15,7 @@
                     <div class="card-header">
                         <h4 style="float: left;"><strong>Student Lists</strong></h4>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" style="float: right;" data-bs-toggle="modal" data-bs-target="#createNewStd">
+                        <button type="button" class="btn btn-info" style="float: right;" data-bs-toggle="modal" data-bs-target="#createNewStd">
                             Create New Student
                         </button>
                     </div>
@@ -36,6 +36,15 @@
                                     <td style="text-align: center;">{{ $std->name }}</td>
                                     <td style="text-align: center;">{{ $std->age }}</td>
                                     <td style="text-align: center;">{{ $std->gender }}</td>
+                                    <td style="text-align: center;">
+                                        <a href="{{ route('std.edit', $std->id) }}" class="btn btn-success btn-sm">Edit</a>
+                                        
+                                        <form action="{{ route('std.delete', $std->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -79,7 +88,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary ms-3" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
