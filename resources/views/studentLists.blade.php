@@ -14,7 +14,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 style="float: left;"><strong>Student Lists</strong></h4>
-                        <!-- Button trigger modal -->
                         <button type="button" class="btn btn-info" style="float: right;" data-bs-toggle="modal" data-bs-target="#createNewStd">
                             Create New Student
                         </button>
