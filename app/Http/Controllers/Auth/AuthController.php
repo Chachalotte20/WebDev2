@@ -52,4 +52,10 @@ class AuthController extends Controller
 
         return redirect()->route('auth.index')->with('success', 'Account Created!');
     }
+
+    public function logout()
+    {
+        Session::flush(); 
+        return redirect()->route('auth.index')->with('success', 'You have been logged out.');
+    }
 }

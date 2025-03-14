@@ -12,12 +12,11 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Student Lists</h5>
 
-            <!-- Action buttons (Create + Logout) -->
             <div class="d-flex gap-2">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createNewStd">
                     Create New Student
                 </button>
-                <a href="{{ route('std.logout') }}" class="btn btn-danger">
+                <a href="{{ route('auth.logout') }}" class="btn btn-danger">
                     Logout
                 </a>
             </div>
